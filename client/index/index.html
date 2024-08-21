@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <section>
+      <div class="db-overlay"></div>
+      <div class="db-head login-head">
+        <div class="main-container ot-pd">
+          <div class="db-head-content">
+            <div class="left-block">
+              <div class="menu-tab">
+                <!--<div class="menu-icon icon icon-menu-group">
+                            </div>-->
+                <div class="menu-main-content">
+                  <div class="close-btn icon icon-wrong"></div>
+                </div>
+              </div>
+              <div class="main-logo">
+                <a href="#">
+                  <img
+                    src="../../assets/file.png"
+                    alt="logo"
+                    style="width: 150px; height: 100px"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="login-body-block">
+        <div class="input-group com-code">
+          <input type="text" id="txtCompanyCode" required />
+          <label for="txtCompanyCode" data-languagetext="companycode"
+            >company code</label
+          >
+        </div>
+
+        <div class="input-group emp-code">
+          <input type="text" id="txtEmpCode" required />
+          <label for="txtEmpCode">employee code</label>
+        </div>
+
+        <div class="input-group pas-code">
+          <input type="password" id="txtPassword" maxlength="24" required />
+          <label for="txtPassword">Password</label>
+          <span class="pass-eye icon icon-visibility-no"></span>
+        </div>
+
+        <div class="login-input-list">
+          <div class="login-input-item re-me" id="chkRemember">
+            <span class="icon icon-ok"></span>
+            <span>Remember me</span>
+          </div>
+        </div>
+        <div class="login-input-list">
+          <div class="login-input-item for-pass" id="btnUnlock">
+            <span><a href="">Unlock Account</a></span>
+          </div>
+          <div class="login-input-item for-pass" id="btnForgot">
+            <span><a href="">Forgot password?</a></span>
+          </div>
+        </div>
+        <a style="text-decoration: none">
+          <div class="db-btn login-btn sub-btn" id="btnLogin">
+            <span>login</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <script>
+      document
+        .getElementById("btnLogin")
+        .addEventListener("click", async () => {
+          const companyCode = document.getElementById("txtCompanyCode").value;
+          const empCode = document.getElementById("txtEmpCode").value;
+          const password = document.getElementById("txtPassword").value;
+
+          console.log(password);
+          console.log(empCode);
+          console.log(companyCode);
+
+          const response = await fetch("http://localhost:3000/api/auth/login", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ companyCode, empCode, password }),
+          });
+
+          const data = await response.json();
+          if (data.success) {
+            alert("Login successful");
+            console.log("Token:", data.token);
+            window.location.href = "/htmjs/client/Home/home.html";
+          } else {
+            alert("Login failed: " + data.message);
+          }
+        });
+    </script>
+  </body>
+</html>

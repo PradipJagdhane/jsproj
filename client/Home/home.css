@@ -1,0 +1,258 @@
+body {
+  background-color: #42b960;
+  /* Light grey background for the whole page */
+  margin: 0;
+  /* Remove default margin */
+  padding: 0;
+  /* Remove default padding */
+}
+
+.second-div {
+  background: linear-gradient(180deg, #cbc4db 0%, #d5beb9 100%);
+  margin-left: 20px;
+  /* Adjust as needed */
+  margin-right: 20px;
+  /* Adjust as needed */
+}
+
+.container-fluid {
+  border: 1px transparent;
+  height: 90px;
+  background: linear-gradient(270deg, #2c2c6f 0%, #e98122 100%);
+  padding: 0 15px;
+  width: 140rem;
+}
+
+.container-fluidk {
+  background-color: rgb(128, 170, 206);
+  display: flex;
+  justify-content: space-between; /* Space out child elements */
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  padding: 0 15px;
+  box-sizing: border-box; /* Ensure padding is included in the total width */
+}
+
+.popup-box {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .popup-box.show-popup {
+    display: block;
+  }
+  
+  .popup-content h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+.container-fluidk img {
+  height: 90px; /* Set a consistent height for images */
+  width: auto; /* Maintain aspect ratio */
+}
+
+.container-fluidk .fa-bell {
+  font-size: 24px;
+  color: #333; /* Adjust icon color as needed */
+}
+
+/* Optional: Add specific styles for images to align them properly */
+.container-fluidk .img-left {
+  margin-right: auto; /* Pushes the image to the left side */
+}
+
+.container-fluidk .img-right {
+  display: flex; /* Align icons in a row */
+  align-items: center; /* Vertically align icons */
+  gap: 10px; /* Space between icons */
+}
+
+.container-panel {
+  background-color: rgb(255, 255, 255);
+  border-radius: 11px;
+
+  /* White background for the panel */
+  height: 70px;
+  line-height: 70px;
+  /* Vertically center text */
+  border-bottom: 1px solid #ddd;
+  /* Optional border */
+}
+
+.nav-link {
+  float: left;
+  text-decoration: none;
+  color: #333;
+  margin-right: 20px;
+  /* Space between each link */
+  display: flex;
+  align-items: center;
+  /* Align items vertically */
+  text-align: center;
+}
+
+.nav-link:last-child {
+  margin-right: 0; /* Remove margin for the last link */
+}
+*/ .nav-link i {
+  font-size: 24px;
+  /* Icon size */
+}
+
+.nav-link span {
+  margin-left: 8px; /* Space between icon and text */
+  font-size: 14px; /* Font size for text */
+}
+
+/* .row{
+    display: grid;
+    grid-template-columns: auto auto auto;
+} */
+
+/* .row {
+    display: flex;
+    justify-content: space-between; 
+    gap: 15px; 
+    padding: 20px; 
+    align-items: flex-start;
+}
+
+.row > div{
+    background-color: white; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 20px; 
+    border-radius: 8px; 
+    flex: 1; 
+    text-align: center; 
+}
+
+.one {
+   
+    height: 100px; 
+}
+
+.two, .three {
+    height: 220px; 
+} */
+
+.row {
+  display: flex;
+  justify-content: space-between; /* Distribute space between items */
+  gap: 15px; /* Space between items */
+  padding: 20px;
+  align-items: flex-start;
+}
+
+.row > div {
+  background-color: white; /* White background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+  padding: 20px; /* Padding inside the box */
+  border-radius: 8px; /* Rounded corners */
+  flex: 1; /* Ensure divs take up equal space */
+  text-align: center; /* Center text inside the box */
+  position: relative; /* Position context for child elements */
+}
+
+.one {
+  /* Default height for div.one */
+  height: 100px; /* Adjust height as needed */
+  /* display: none; */
+}
+
+.two,
+.three {
+  /* Increased height for div.two */
+  height: 220px; /* Adjust height as needed */
+}
+
+.two h4 {
+  margin: 0; /* Remove default margins from the heading */
+  position: absolute; /* Position the heading absolutely within .two */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  padding: 10px; /* Add padding if needed */
+  background-color: white; /* Ensure the heading is readable */
+}
+
+.row1 {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 20px;
+}
+
+.row1 > div {
+  background-color: white; /* White background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+  padding: 20px; /* Padding inside the box */
+  border-radius: 8px; /* Optional: rounded corners */
+  flex: 1; /* Ensure divs take up equal space */
+  text-align: center; /* Center text inside the box */
+}
+
+/* .four */
+
+.calendar-container {
+  height: 290px;
+  display: flexbox;
+}
+
+.five,
+.six {
+  height: 220px;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column; /* Stack items vertically on small screens */
+  }
+}
+
+/* calender css */
+
+.calendar-container {
+  text-align: center;
+}
+
+.calendar {
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.calendar-header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 1px;
+}
+
+.calendar-day {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #eee;
+}
+
+.calendar-day.active {
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+}
