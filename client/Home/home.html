@@ -41,11 +41,11 @@
 
   <body>
     <div class="container-fluidk">
-      <img src="../../assets/file.png" class="img-left" alt="Logo" />
+      <img src="../assets/file.png" class="img-left" alt="Logo" />
       <div class="img-right">
         <i class="fa-regular fa-bell"></i>
         <img
-          src="../../assets/three-dots-vertical.svg"
+          src="../assets/three-dots-vertical.svg"
           alt="Menu"
           style="height: 30px"
           id="menu-icon"
@@ -131,6 +131,7 @@
                 <div class="calendar-day" id="day-17">17</div>
                 <div class="calendar-day" id="day-18">18</div>
                 <div class="calendar-day" id="day-19">19</div>
+
                 <div class="calendar-day" id="day-20">20</div>
                 <div class="calendar-day" id="day-21">21</div>
                 <div class="calendar-day" id="day-22">22</div>
@@ -146,7 +147,13 @@
             </div>
           </div>
 
-          <div class="five">23</div>
+          <!-- <div class="five">2563</div> -->
+          <div class="five">
+            <div id="message-container">
+              <p id="message-display">This is the first message.</p>
+            </div>
+          </div>
+
           <div class="six">
             <b><h4>Announcement</h4></b>
             <i class="fa-solid fa-bullhorn fa-5x"></i>
@@ -194,7 +201,6 @@
         menuIcon.addEventListener("click", function () {
           popupBox.classList.toggle("show-popup");
         });
-
       });
 
       document
@@ -213,6 +219,37 @@
             popupBox.style.display = "none";
           }
         });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const messages = [
+          "This is the first message.",
+          "Here comes the second message.",
+          "And this is the third message.",
+        ];
+
+        let currentMessageIndex = 0;
+        const messageDisplay = document.getElementById("message-display");
+
+        function showNextMessage() {
+          // Set the message text
+          messageDisplay.textContent = messages[currentMessageIndex];
+
+          // Trigger reflow to restart the animation
+          void messageDisplay.offsetWidth;
+
+          // Add the scrolling animation class
+          messageDisplay.classList.add("scrolling");
+
+          // Move to the next message, loop back to the start if necessary
+          currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+        }
+
+        // Show the next message every 4 seconds
+        setInterval(showNextMessage, 4000);
+
+        // Start the first message immediately
+        showNextMessage();
+      });
     </script>
   </body>
 </html>

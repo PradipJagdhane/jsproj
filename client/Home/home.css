@@ -115,36 +115,7 @@ body {
   font-size: 14px; /* Font size for text */
 }
 
-/* .row{
-    display: grid;
-    grid-template-columns: auto auto auto;
-} */
 
-/* .row {
-    display: flex;
-    justify-content: space-between; 
-    gap: 15px; 
-    padding: 20px; 
-    align-items: flex-start;
-}
-
-.row > div{
-    background-color: white; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    padding: 20px; 
-    border-radius: 8px; 
-    flex: 1; 
-    text-align: center; 
-}
-
-.one {
-   
-    height: 100px; 
-}
-
-.two, .three {
-    height: 220px; 
-} */
 
 .row {
   display: flex;
@@ -208,7 +179,7 @@ body {
   display: flexbox;
 }
 
-.five,
+
 .six {
   height: 220px;
 }
@@ -218,6 +189,46 @@ body {
     flex-direction: column; /* Stack items vertically on small screens */
   }
 }
+
+.five {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%; /* Adjust width as needed */
+  height: 220px; /* Adjust height as needed */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 18px; /* Adjust font size as needed */
+  text-align: center;
+  overflow: hidden; /* Hide overflow if the text is too long */
+  position: relative;
+}
+
+#message-container {
+  white-space: nowrap;
+  display: inline-block;
+}
+
+@keyframes scroll-message {
+  0% {
+    transform: translateX(100%);
+  }
+  10% {
+    transform: translateX(0%);
+  }
+  90% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.scrolling {
+  animation: scroll-message 5s linear infinite;
+}
+
 
 /* calender css */
 
